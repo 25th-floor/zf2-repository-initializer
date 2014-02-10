@@ -1,0 +1,12 @@
+{
+	"name": "25th/doctrine-zf2-repository-initializer",
+	"authors": [
+		{
+			"name": "Martin Prebio",
+			"email": "mp@25th-floor.com"
+		}
+	],
+	"require": {
+		"php": ">=5.4"
+	}
+}
