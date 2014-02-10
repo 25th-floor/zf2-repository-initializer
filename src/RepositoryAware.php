@@ -1,6 +1,6 @@
 <?php
 
-namespace TwentyFifth\DoctrineZf2RepositoryInitializer;
+namespace TwentyFifth\Zf2RepositoryInitializer;
 
 /**
  * RepositoryAware interface

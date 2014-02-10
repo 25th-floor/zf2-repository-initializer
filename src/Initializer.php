@@ -1,6 +1,6 @@
 <?php
 
-namespace TwentyFifth\DoctrineZf2RepositoryInitializer;
+namespace TwentyFifth\Zf2RepositoryInitializer;
 
 use ReflectionClass;
 use Zend\Mvc\Controller\ControllerManager;
@@ -13,7 +13,7 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 class Initializer
 	implements InitializerInterface
 {
-	const AWARENESS_INTERFACE = 'TwentyFifth\DoctrineZf2RepositoryInitializer\RepositoryAware';
+	const AWARENESS_INTERFACE = 'TwentyFifth\Zf2RepositoryInitializer\RepositoryAware';
 
 	/**
 	 * Initializes RepositoryAware services. All other services won't be touched.
