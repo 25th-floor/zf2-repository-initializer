@@ -39,8 +39,7 @@ class Initializer
 
 			$repositorySetter = $this->getRepositorySetter($interface);
 			if (!method_exists($instance, $repositorySetter)) {
-				throw new Exception('Instance of type '.get_class($instance).' does not implement method '.$repositorySetter.
-					' which is required by the repository initializer');
+				throw Exception::repositorySetterMissingInInstance($instance, $repositorySetter);
 			}
 
 			$repositoryService = $this->getRepositoryService($interface);
@@ -58,7 +57,7 @@ class Initializer
 	private function getRepositorySetter(ReflectionClass $interface)
 	{
 		if (1 !== preg_match('@([^\\\\]+)Aware@', $interface->getName(), $matches)) {
-			throw new Exception('Awareness interface does not follow the required format <Repository>Aware');
+			throw Exception::invalidAwarenessInterfaceFormat();
 		}
 
 		$repositoryName = $matches[1];
@@ -77,7 +76,7 @@ class Initializer
 	private function getRepositoryService(ReflectionClass $interface)
 	{
 		if (1 !== preg_match('#@repositoryService\s+(.*)#', $interface->getDocComment(), $matches)) {
-			throw new Exception('Awareness interface does not have a @repositoryService annotation');
+			throw Exception::RepositoryServiceDefinitionMissing($interface->getName());
 		}
 
 		$repositoryService = $matches[1];
