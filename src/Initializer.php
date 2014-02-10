@@ -6,9 +6,19 @@ use Zend\Mvc\Controller\ControllerManager;
 use Zend\ServiceManager\InitializerInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
+/**
+ * Initializer for RepositoryAware services.
+ */
 class Initializer
 	implements InitializerInterface
 {
+	/**
+	 * Initializes RepositoryAware services. All other services won't be touched.
+	 *
+	 * @param mixed                   $instance
+	 * @param ServiceLocatorInterface $serviceLocator
+	 * @return void
+	 */
 	public function initialize($instance, ServiceLocatorInterface $serviceLocator)
 	{
 		if ($serviceLocator instanceof ControllerManager) {
