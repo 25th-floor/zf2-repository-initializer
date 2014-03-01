@@ -23,7 +23,7 @@ of <i>FooRepositoryAware</i> must have a method <i>setFooRepository</i>.
 Further the interface must provide an annotation <i>@repositoryService</i> which specifies a service key. The service
 manager will be called with this key in order to load the service.
 
-# Example
+## Example
 
 Aware interface example
     
