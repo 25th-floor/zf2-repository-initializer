@@ -21,6 +21,6 @@ class Exception extends \Exception
 
 	public static function RepositoryServiceDefinitionMissing($interfaceName)
 	{
-		return new self('Awareness interface %s does not have a @repositoryService annotation', $interfaceName);
+		return new self(sprintf('Awareness interface %s does not have a @repositoryService annotation', $interfaceName));
 	}
 }
